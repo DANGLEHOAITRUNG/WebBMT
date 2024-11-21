@@ -1,0 +1,35 @@
+<!-- src/app/components/product-detail/product-detail.component.html -->
+<div *ngFor="let Product of productList" class="product-info-card">
+  <h2>Chi tiết sản phẩm</h2>
+
+  <div>
+    <strong>Tên sản phẩm:</strong> {{ Product.ProductName }}
+  </div>
+  <div>
+    <strong>Thương hiệu:</strong> {{ Product.brandId }}
+  </div>
+
+  <div>
+    <strong>Danh mục:</strong> {{ Product.categoryId }}
+  </div>
+
+  <div>
+    <strong>Giá:</strong> {{ Product.price }}
+  </div>
+
+  <div>
+    <strong>Số lượng:</strong> {{ Product.quantity }}
+  </div>
+
+  <div>
+    <strong>URL hình ảnh:</strong>
+    <img [src]="Product.imageUrl" alt="{{ Product.productName }}" />
+  </div>
+
+  <button (click)="goBack()">Trở lại</button>
+</div>
+
+<!-- Nếu chưa tải được sản phẩm, hiển thị loading -->
+<div *ngIf="!loadProductData">
+  <p>Đang tải dữ liệu sản phẩm...</p>
+</div>

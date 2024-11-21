@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm Sản Phẩm</title>
+</head>
+<body>
+    <div class="search-container">
+        <input 
+          type="text" 
+          [(ngModel)]="searchQuery" 
+          (ngModelChange)="search(searchQuery)" 
+          placeholder="Tìm kiếm sản phẩm..." 
+          class="search-input"
+        />
+      </div>
+      
+        <div *ngIf="productList.length === 0">
+          <p>Không tìm thấy sản phẩm nào.</p>
+        </div>
+      
+</body>
+</html>
